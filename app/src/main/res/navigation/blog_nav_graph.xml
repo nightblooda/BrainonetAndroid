@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/blog_nav_graph"
+    app:startDestination="@id/blogFragment">
+
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="com.brainonet.brainonet.ui.main.blog.BlogFragment"
+        android:label="fragment_blog"
+        tools:layout="@layout/fragment_blog" >
+        <action
+            android:id="@+id/action_blogFragment_to_viewBlogFragment"
+            app:destination="@id/viewBlogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBlogFragment"
+        android:name="com.brainonet.brainonet.ui.main.blog.ViewBlogFragment"
+        android:label="fragment_view_blog"
+        tools:layout="@layout/fragment_view_blog" >
+        <action
+            android:id="@+id/action_viewBlogFragment_to_blogFragment"
+            app:destination="@id/blogFragment"
+            app:popUpTo="@id/blog_nav_graph"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+</navigation>

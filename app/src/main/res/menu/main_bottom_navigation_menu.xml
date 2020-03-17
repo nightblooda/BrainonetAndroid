@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item android:id="@+id/nav_blog"
+        android:title="Explore"
+        android:icon="@drawable/ic_explore"/>
+
+    <item android:id="@+id/nav_community"
+        android:title="Community"
+        android:icon="@drawable/ic_layers"
+        />
+
+    <item android:id="@+id/nav_fake"
+        android:title="Fake Check"
+        android:icon="@drawable/ic_select"
+        />
+
+
+    <item android:id="@+id/nav_account"
+        android:title="Account"
+        android:icon="@drawable/ic_user"/>
+
+
+</menu>

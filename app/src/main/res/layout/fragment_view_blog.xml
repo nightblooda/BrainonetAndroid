@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.blog.ViewBlogFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="shared_element">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learn_content"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="4:3"
+                android:scaleType="centerCrop"
+                android:foreground="@drawable/default_image"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:minHeight="?attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:menu="@menu/learn"
+                app:navigationIcon="@drawable/ic_back">
+
+<!--                <ImageView-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    app:srcCompat="@drawable/brainonet_nude"/>-->
+
+            </androidx.appcompat.widget.Toolbar>
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/course_instructor"-->
+<!--                android:layout_width="38dp"-->
+<!--                android:layout_height="38dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/image"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/image"-->
+<!--                android:src="@drawable/avatar"-->
+<!--                app:civ_border_width="3dp"-->
+<!--                app:civ_border_color="#fff"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/course_instructor"-->
+<!--                android:layout_width="38dp"-->
+<!--                android:layout_height="38dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/image"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/image"-->
+<!--                android:background="@drawable/brainonet_nude"-->
+<!--                android:foreground="@drawable/avatar_outline"-->
+<!--                android:importantForAccessibility="no"/>-->
+
+            <TextView
+                android:id="@+id/course_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="@dimen/grid_1"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="asdf"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+
+            <TextView
+                android:id="@+id/course_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/course_subject"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingHorizontal="@dimen/grid_1"
+                android:gravity="left"
+                android:textSize="13dp"
+                android:textColor="@color/write"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                tools:text="c/computerscience . 24 Feb"/>
+
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/course_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/grid_1"
+                android:padding="@dimen/grid_1"
+                android:gravity="left"
+                android:textSize="14dp"
+                android:textColor="@color/writeLight"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:lineSpacingExtra="5dp"
+                android:text="Another textsdfa sadfas sdfas sadfasd sdfas sdfasd basdfasdfa sdfasdf sdfasd sdfasd asdfasd"/>
+
+<!--            <View-->
+<!--                android:id="@+id/divider"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/description"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:background="@drawable/inset_divider"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/need"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/divider"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:padding="@dimen/grid_2"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="?attr/textAppearanceHeadline6"-->
+<!--                android:text="Text again"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/needs"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/need"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:padding="@dimen/grid_2"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="?attr/textAppearanceBody1"-->
+<!--                android:text="Text again and again"/>-->
+
+<!--            <View-->
+<!--                android:id="@+id/also_like_background"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/needs"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:background="?attr/colorPrimarySurface"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/also_like"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/needs"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:paddingHorizontal="@dimen/grid_2"-->
+<!--                android:paddingVertical="@dimen/grid_3"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="?attr/textAppearanceHeadline6"-->
+<!--                android:textColor="?attr/colorOnPrimarySurface"-->
+<!--                android:text="text for you will also like"/>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/also_like_list"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginBottom="@dimen/grid_4"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/also_like"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:paddingHorizontal="@dimen/grid_2"-->
+<!--                android:clipToPadding="false"-->
+<!--                android:orientation="horizontal"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
