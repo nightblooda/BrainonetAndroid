@@ -9,5 +9,17 @@
         android:id="@+id/communityFragment"
         android:name="com.brainonet.brainonet.ui.main.community.CommunityFragment"
         android:label="fragment_community"
-        tools:layout="@layout/fragment_community" />
+        tools:layout="@layout/fragment_community" >
+        <action
+            android:id="@+id/action_communityFragment_to_viewCommunityFragment"
+            app:destination="@id/viewCommunityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCommunityFragment"
+        android:name="com.brainonet.brainonet.ui.main.community.ViewCommunityFragment"
+        android:label="ViewCommunityFragment" >
+        <action
+            android:id="@+id/action_viewCommunityFragment_to_communityFragment"
+            app:destination="@id/communityFragment" />
+    </fragment>
 </navigation>

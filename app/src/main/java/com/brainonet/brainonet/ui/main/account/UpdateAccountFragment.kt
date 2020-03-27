@@ -2,15 +2,15 @@ package com.brainonet.brainonet.ui.main.account
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.brainonet.brainonet.R
 import com.brainonet.brainonet.models.AccountProperties
 import com.brainonet.brainonet.session.SessionManager
 import com.brainonet.brainonet.ui.main.account.state.AccountStateEvent
 import com.brainonet.brainonet.ui.main.blog.BaseBlogFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_update_account.*
 import javax.inject.Inject
 
@@ -23,18 +23,18 @@ class UpdateAccountFragment : BaseAccountFragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_update_account, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
+        (activity as AppCompatActivity).supportActionBar?.show()
 
         subscribeObservers()
 
-        submit_fields.setOnClickListener {
-            saveChanges()
-        }
 
         logout_btn.setOnClickListener {
             viewModel.logout()
@@ -75,5 +75,21 @@ class UpdateAccountFragment : BaseAccountFragment(){
                 )
         )
         stateChangeListener.hideSoftKeyboard()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.save -> {
+                saveChanges()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.update_account, menu)
+
     }
 }

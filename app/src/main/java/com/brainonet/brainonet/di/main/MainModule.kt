@@ -4,8 +4,10 @@ import com.brainonet.brainonet.api.main.ApiMainService
 import com.brainonet.brainonet.persistence.AccountPropertiesDao
 import com.brainonet.brainonet.persistence.AppDatabase
 import com.brainonet.brainonet.persistence.BlogPostDao
+import com.brainonet.brainonet.persistence.CommunityDao
 import com.brainonet.brainonet.repository.main.AccountRepository
 import com.brainonet.brainonet.repository.main.BlogRepository
+import com.brainonet.brainonet.repository.main.CommunityRepository
 import com.brainonet.brainonet.session.SessionManager
 import dagger.Module
 import dagger.Provides
@@ -42,6 +44,7 @@ class MainModule {
         return db.getBlogPostDao()
     }
 
+
     @MainScope
     @Provides
     fun provideBlogRepository(
@@ -50,6 +53,23 @@ class MainModule {
         sessionManager: SessionManager
     ): BlogRepository {
         return BlogRepository(apiMainService, blogPostDao, sessionManager)
+    }
+
+
+    @MainScope
+    @Provides
+    fun provideCommunityDao(db: AppDatabase): CommunityDao {
+        return db.getCommunityDao()
+    }
+
+    @MainScope
+    @Provides
+    fun provideCommunityRepository(
+        apiMainService: ApiMainService,
+        communityDao: CommunityDao,
+        sessionManager: SessionManager
+    ): CommunityRepository{
+        return CommunityRepository(apiMainService, communityDao, sessionManager)
     }
 
 
